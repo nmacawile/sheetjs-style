@@ -14275,6 +14275,9 @@ function parse_ws_bin(data, _opts, idx, rels, wb, themes, styles) {
 			case 0x01DE: /* 'BrtPageSetup' */
 			case 0x0219: /* 'BrtPhoneticInfo' */
 			case 0x01DD: /* 'BrtPrintOptions' */
+			  s['!printoptions'] = val;
+			  break;
+			  
 			case 0x0218: /* 'BrtRangeProtection' */
 			case 0x044F: /* 'BrtRangeProtection14' */
 			case 0x02A8: /* 'BrtRangeProtectionIso' */
