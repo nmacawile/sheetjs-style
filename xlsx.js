@@ -13221,6 +13221,12 @@ function write_ws_xml_margins(margin) {
 	return writextag('pageMargins', null, margin);
 }
 
+function write_ws_xml_printoptions(options) {
+  var hc = options.horizontalCentered ? "1" : "0";
+  var vc = options.verticalCentered ? "1" : "0";
+  return writextag('printoptions', null, { horizontalCentered: hc, verticalCentered: vc });
+}
+
 function parse_ws_xml_cols(columns, cols) {
 	var seencol = false;
 	for(var coli = 0; coli != cols.length; ++coli) {
@@ -13618,6 +13624,7 @@ ws['!links'].forEach(function(l) {
 	delete ws['!links'];
 
 	/* printOptions */
+	if(ws['!printoptions'] != null) o[o.length] =  write_ws_xml_printoptions(ws['!printoptions']);
 
 	if(ws['!margins'] != null) o[o.length] =  write_ws_xml_margins(ws['!margins']);
 

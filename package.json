@@ -1,6 +1,6 @@
 {
 	"name": "@nmacawile/sheetjs-style",
-	"version": "0.15.7",
+	"version": "0.15.7.1",
 	"author": "sheetjs",
 	"description": "SheetJS Spreadsheet data parser and writer",
 	"keywords": [
